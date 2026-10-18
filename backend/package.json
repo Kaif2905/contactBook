@@ -1,0 +1,33 @@
+{
+  "name": "contact-book-backend",
+  "version": "1.0.0",
+  "description": "Node.js + Express + MySQL API for the Advanced Contact Book",
+  "private": true,
+  "type": "module",
+  "main": "src/server.js",
+  "engines": {
+    "node": ">=20.10"
+  },
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "check": "node scripts/check-setup.js",
+    "db:setup": "node scripts/setup-db.js",
+    "db:reset": "node scripts/setup-db.js --reset",
+    "samples": "node scripts/make-large-file.js",
+    "test": "node --test --test-concurrency=1 tests/rules.test.js tests/importProcessor.test.js tests/xlsxReader.test.js tests/api.test.js tests/upload.test.js",
+    "test:unit": "node --test tests/rules.test.js tests/importProcessor.test.js tests/xlsxReader.test.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "csv-parse": "^5.5.6",
+    "dotenv": "^16.4.5",
+    "exceljs": "^4.4.0",
+    "express": "^5.1.0",
+    "multer": "^2.0.0",
+    "mysql2": "^3.11.0",
+    "saxes": "^5.0.1",
+    "xlsx": "https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz",
+    "yauzl": "^2.10.0"
+  }
+}
